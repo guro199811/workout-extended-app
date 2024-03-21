@@ -7,8 +7,15 @@
     align-items: center !important;
     background-color: transparent !important;
     width: 13vw;
-    height: 90vh;
+    height: 0vh;
     position: fixed;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+}
+
+.sidebar.active{
+    transform: translateX(0);
+    height: 90vh;
 }
 
 .sidebar a{
@@ -30,7 +37,7 @@
 }
 
 .sidebar a:active{
-    box-shadow: 0 0 30px 5px white, 0 0 15px 1px rgb(255, 255, 255) inset;
+    box-shadow: 0 0 40px 5px white, 0 0 15px 1px rgb(255, 255, 255) inset;
 }
 
 .sidebar button{
@@ -56,4 +63,95 @@
     box-shadow: 0 0 25px 3px white, 0 0 15px 1px rgb(255, 255, 255) inset;
     color:white;
     background-color: hsl(0, 100%, 44%);
+}
+
+.sidebar button:active{
+    box-shadow: 0 0 40px 5px white, 0 0 15px 1px rgb(255, 255, 255) inset;
+    color:white;
+    background-color: hsl(0, 100%, 44%);
+}
+
+/* Logout Confirmation window */
+.logoutBg{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px) contrast(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.logoutBg.active{
+    opacity: 1;
+}
+
+.logoutWindow{
+    scale: 0;
+    background-color: black;
+    border-radius: 30px;
+    border: wheat solid;
+    width: 40vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 15px 3px wheat, 0 0 15px 2px wheat inset;
+    z-index: 1001;
+    transition: 0.7s ease
+}
+
+.logoutWindow div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoutWindow.active{
+    scale: 1;
+    transition: scale 0.7s ease;
+}
+
+.logoutWindow section {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.logoutWindow .yesBtn,
+.logoutWindow .noBtn {
+    font-size: 18px;
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif;
+    background-color: transparent;
+    color: white;
+    border-radius: 10px;
+    margin: 0 15px;
+    width: 5vw;
+    height: 3.5vh;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 25px 3px white, 0 0 15px 1px rgb(255, 255, 255) inset;
+    transition: 0.5s;
+}
+
+.logoutWindow .yesBtn:hover{
+    box-shadow: 0 0 40px 3px white, 0 0 15px 1px rgb(255, 255, 255) inset;
+    color:black;
+    background-color: rgb(255, 166, 0);
+}
+
+.logoutWindow .noBtn:hover{
+    box-shadow: 0 0 40px 3px white, 0 0 15px 1px rgb(255, 255, 255) inset;
+    color: black;
+    background-color: whitesmoke;
 }

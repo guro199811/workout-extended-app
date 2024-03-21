@@ -23,8 +23,18 @@ body{
 
 
 a {
-font-weight: 500;
-text-decoration: inherit;
+    font-weight: 500;
+    text-decoration: inherit;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+button {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -46,4 +56,14 @@ text-decoration: inherit;
 
 ::-webkit-scrollbar-thumb:hover{
     background-color: hsla(0, 0%, 100%, 0.5);
+}
+
+
+.wrapper{
+    scale: 0;
+    transition: 0.3s;
+}
+
+.wrapper.active{
+    scale: 1;
 }
