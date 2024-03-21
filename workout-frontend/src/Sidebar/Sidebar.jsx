@@ -1,14 +1,20 @@
-import Navbar from "./Navbar/Navbar.jsx"
-import Home from "./Home/Home.jsx"
+import styles from './Sidebar.module.css';
 
-function App() {
+function Sidebar() {
 
-  return (
-    <>
-      <Navbar />
-      <Home />
-    </>
-  )
+    const handleLogout = () => {
+        localStorage.removeItem("accessToken");
+        alert("Logged out & Token removed");
+        }
+
+    return (
+        <div className={styles.sidebar}>
+            <a>My Data</a>
+            <a>My Goals</a>
+            <a>My Schedule</a>
+            <button onClick={() => handleLogout()}>Log-Out</button>
+        </div>
+        )
 }
 
-export default App
+export default Sidebar

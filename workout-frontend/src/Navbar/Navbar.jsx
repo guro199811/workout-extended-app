@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import styles from './Navbar.module.css';
 import Auth from '../Auth/Auth.jsx';
+import Sidebar from '../Sidebar/Sidebar.jsx';
 import logo from '../assets/logo.png';
 import { useAuth } from "../AuthContext.jsx"
 
@@ -14,11 +15,6 @@ function Navbar() {
 
   function login(){
     setShowAuthPage(true);
-  }
-
-  const handleLogout = () => {
-    localStorage.removeItem("accessToken");
-    alert("Logged out & Token removed");
   }
   
 
@@ -40,7 +36,9 @@ function Navbar() {
         
       </div>
     </div>
-
+    <div className={styles.sidebar}>
+    <Sidebar />
+    </div>
     <div className={`${styles.container}
           ${showAuthPage ? styles.active : '' }`}>
       {showAuthPage && <Auth onClose={ closeAuth } />}
