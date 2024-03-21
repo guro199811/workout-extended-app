@@ -1,6 +1,59 @@
 .sidebar{
-    background-color: gray;
+    font-size: 17px;
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+        'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    background-color: transparent !important;
     width: 13vw;
     height: 90vh;
     position: fixed;
+}
+
+.sidebar a{
+    display: flex;
+    align-items: center !important;
+    justify-content: center!important;
+    margin: 15px 0px;
+    border-radius: 10px;
+    width: 69%;
+    height: 4.5%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 25px 3px black, 0 0 15px 1px rgb(66, 66, 66) inset;
+    transition: 0.5s;
+}
+
+.sidebar a:hover{
+    box-shadow: 0 0 25px 3px white, 0 0 15px 1px rgb(255, 255, 255) inset;
+}
+
+.sidebar a:active{
+    box-shadow: 0 0 30px 5px white, 0 0 15px 1px rgb(255, 255, 255) inset;
+}
+
+.sidebar button{
+    background-color: hsl(39, 100%, 72%);
+    font-size: 18px;
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif;
+    color: black;
+    display: flex;
+    align-items: center!important;
+    justify-content: center!important;
+    margin: 20px 0px;
+    border-radius: 10px;
+    width: 69%;
+    height: 5%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 25px 3px black, 0 0 15px 1px rgb(66, 66, 66) inset;
+    transition: 0.5s;
+}
+
+.sidebar button:hover{
+    box-shadow: 0 0 25px 3px white, 0 0 15px 1px rgb(255, 255, 255) inset;
+    color:white;
+    background-color: hsl(0, 100%, 44%);
 }

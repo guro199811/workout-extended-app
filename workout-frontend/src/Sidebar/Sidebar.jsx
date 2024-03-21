@@ -14,7 +14,7 @@ function Sidebar() {
             <a>My Schedule</a>
             <button onClick={() => handleLogout()}>Log-Out</button>
         </div>
-        )
+    )
 }
 
 export default Sidebar

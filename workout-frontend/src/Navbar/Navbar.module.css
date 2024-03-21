@@ -65,9 +65,11 @@
 }
 
 .sidebar{
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
+    overflow: hidden !important;
+    transition: 0.5s ease-in-out;
 }
 
 .loginBtn:hover{

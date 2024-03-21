@@ -14,12 +14,16 @@ function Navbar() {
   const { userToken } = useAuth()
 
   function login(){
-    setShowAuthPage(true);
+    setShowAuthPage(!showAuthPage);
   }
   
 
   function closeAuth() {
     setShowAuthPage(false);
+  }
+
+  function toggleSidebar() {
+    setShowSidebar(!showSidebar);
   }
 
 
@@ -31,14 +35,14 @@ function Navbar() {
         <a href="/">Home</a>
         <a href="/">Search in Exercises</a>
         { userToken ? 
-        <a className={styles.sidebarBtn}><i className='bx bx-menu'></i></a> : 
+        <a className={styles.sidebarBtn} onClick={() => toggleSidebar()}><i className='bx bx-menu'></i></a> : 
         <a className={styles.loginBtn} onClick={login}>Log-In</a> }
-        
       </div>
     </div>
-    <div className={styles.sidebar}>
-    <Sidebar />
-    </div>
+    
+    { showSidebar && 
+    <div className={styles.sidebar}> <Sidebar /> </div> }
+    
     <div className={`${styles.container}
           ${showAuthPage ? styles.active : '' }`}>
       {showAuthPage && <Auth onClose={ closeAuth } />}
