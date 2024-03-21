@@ -1,0 +1,120 @@
+.content{
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoDiv{
+    display:flex;
+    height: 40vh;
+    width: 65vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Inter, system-ui,
+        Avenir, Helvetica, Arial, sans-serif;
+    
+}
+
+.exerciseType{
+    height: 40vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.exerciseTypeDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Inter, system-ui, Avenir, Helvetica, 
+        Arial, sans-serif;
+    border: 2px solid wheat;
+    color: wheat;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 2px wheat;
+    margin: 0px 20px;
+    height: 17vh;
+    width: 14vw;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.exerciseTypeDiv:hover{
+    background-color: hsl(39, 100%, 75%);
+    box-shadow: 0px 0px 10px 2px hsl(39, 100%, 50%);
+    color: rgb(0, 0, 0);
+}
+
+.exerciseType a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.exerciseOuterDiv{
+    top: 0;
+    margin: 0;
+    background-color: transparent;
+    position:fixed;
+    width: 100vw;
+    height:100vh;
+    z-index: 5000;
+    backdrop-filter: blur(0px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+    transition: backdrop-filter .4s ease;
+}
+
+.exerciseOuterDiv.active{
+    backdrop-filter: blur(5px);
+    scale: 1;
+}
+
+.exerciseInnerDiv{
+    display: flex;
+    z-index: 6000;
+    flex-direction: column;
+    margin: 15vh 20vw;
+    padding: 2vh 5vw;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 7px hsl(39, 100%, 25%);
+    height: 50vh;
+    scale: 0;
+    overflow: auto;
+    transition: 0.5s;
+}
+
+.exerciseInnerDiv.active{
+    scale: 1;
+    transition: 0.5s ease;
+}
+
+
+.exerciseInnerDiv h2{
+    text-align: center;
+    margin-top: 5vh;
+}
+

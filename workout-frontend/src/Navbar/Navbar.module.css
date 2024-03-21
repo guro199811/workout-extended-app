@@ -1,0 +1,105 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 10vh;
+}
+
+.logo{
+    max-width: 100px;
+    max-height: 100px;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+    justify-content: center;
+}
+
+
+
+.logo img{
+    margin-top: 30px;
+    width: 75%;
+    height: 75%;
+}
+
+.links a{
+    color: wheat;
+    max-width: 100px;
+    margin: 10px 13px;
+    padding: 7px 15px 8px 15px;
+    border: 2px solid wheat;
+    box-shadow: 0px 0px 10px 2px wheat;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.links a:hover{
+    background-color: hsl(39, 100%, 5%);
+    box-shadow: 0px 0px 10px 2px hsl(39, 100%, 25%);
+    color: rgb(255, 255, 255);
+}
+
+.links a:active{
+    background-color: slategray;
+    color: white;
+}
+
+.loginBtn{
+    color: black !important;
+    background-color: white !important;
+    box-shadow: 0px 0px 10px 2px white !important;
+}
+
+.sidebarBtn{
+    color: black !important;
+    background-color: white !important;
+    box-shadow: 0px 0px 10px 2px white !important;
+    font-size: 20px;
+    padding-bottom: 6px !important;
+}
+
+.loginBtn:hover{
+    color: white!important;
+    background-color: transparent !important;
+    box-shadow: 0px 0px 10px 2px black!important;
+}
+
+.sidebarBtn:hover{
+    color: white!important;
+    background-color: transparent!important;
+    box-shadow: 0px 0px 10px 2px black!important;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    margin: 0;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0px);
+    transition: opacity 0.3s ease-in-out, 
+        backdrop-filter 0.3s ease-in-out;
+  }
+
+.container.active{
+    transform: scale(1);
+    opacity: 1;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease-in-out, 
+        backdrop-filter 0.3s ease-in-out;
+  }
