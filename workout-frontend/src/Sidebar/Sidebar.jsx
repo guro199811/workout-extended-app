@@ -3,13 +3,10 @@ import styles from './Sidebar.module.css';
 
 function Sidebar() {
 
-    const [animation, setAntimation] = useState(false);
+
     const [wrapper, setWrapper] = useState(false);
     const [logout, setLogout] = useState(false);
 
-    useEffect(() => {
-        setAntimation(true);
-    }, [])
 
     const logoutDiv = () => {
         setWrapper(true);
@@ -38,15 +35,14 @@ function Sidebar() {
 
     return (
         <>
-        <div className={`${styles.sidebar}
-            ${animation ? styles.active : ''}`}>
+        <div className={styles.sidebar}>
             <a>My Data</a>
             <a>My Goals</a>
             <a>My Schedule</a>
             <button onClick={() => logoutDiv()}>Log-Out</button>
         </div>
             {wrapper &&
-            <div className={`'wrapper'
+            <div className={`wrapper
                 ${wrapper ? 'active' : ''}`}>
                 <div className={`${styles.logoutBg}
                     ${logout ? styles.active : ''}`}>

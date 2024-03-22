@@ -6,6 +6,8 @@ function Home() {
   const [selectedType, setSelectedType] = useState(null);
   const [isOuterDivActive, setIsOuterDivActive] = useState(false);
   const [isInnerDivActive, setIsInnerDivActive] = useState(false);
+  const [wrapper, setWrapper] = useState(false);
+
 
   useEffect(() => {
     fetch("http://localhost:8000/exercise/sorted/exercise_type")
@@ -15,15 +17,23 @@ function Home() {
   }, []);
   
   const handleClick = (type) => {
-    setIsOuterDivActive(true);
-    setIsInnerDivActive(true);
-    setSelectedType(type);
+    setWrapper(true);
+    setTimeout(() => {
+      setIsOuterDivActive(true);
+      setIsInnerDivActive(true);
+      setSelectedType(type);
+
+    }, 5)
   };
 
   const closeOuterDiv = () => {
     setIsOuterDivActive(false);
     setIsInnerDivActive(false);
-    setSelectedType(null);
+    setTimeout(() => {
+      setWrapper(false);
+      setSelectedType(null);
+    }, 300)
+    
   };
 
   const selectedExercises = data?.exercises.filter(
@@ -68,6 +78,9 @@ function Home() {
         </div>
       </div>
 
+      {wrapper &&
+        <div className={`wrapper
+          ${wrapper ? 'active' : ''}`}>
       <div
         className={`${styles.exerciseOuterDiv}
             ${isOuterDivActive ? styles.active : ""}`}
@@ -89,7 +102,9 @@ function Home() {
             </div>
           ))}
         </div>
+        </div>
       </div>
+      }
     </div>
   );
 }

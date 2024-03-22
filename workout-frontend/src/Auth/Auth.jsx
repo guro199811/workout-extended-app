@@ -110,7 +110,7 @@ function Auth({ onClose }) {
     <>
         <div className={`${styles.wrapper}
           ${registerWrapper ? styles.register : '' }`}>
-          <span className={styles.iconClose} onClick={onClose}>
+          <span className={styles.iconClose} onClick={ onClose }>
           <i className='bx bx-x'></i>
           </span>
 

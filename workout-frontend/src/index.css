@@ -60,10 +60,18 @@ button {
 
 
 .wrapper{
-    scale: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 456;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    transform: scale(0);
     transition: 0.3s;
 }
 
 .wrapper.active{
-    scale: 1;
+    transform: scale(1);
+    transition: 0.3s;
 }
