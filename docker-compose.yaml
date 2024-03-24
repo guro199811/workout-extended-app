@@ -13,7 +13,7 @@ services:
       - workout_postgresql
     volumes:
       - ./workout-api:/workout-api
-    restart: always
+    # restart: always
     
   workout_postgresql:
     image: postgres:latest
@@ -51,4 +51,4 @@ services:
     volumes:
       - ./workout-frontend:/workout-frontend
     
-    restart: always
+    # restart: always

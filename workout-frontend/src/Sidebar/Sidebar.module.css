@@ -68,9 +68,9 @@
 }
 
 /* Logout Confirmation window */
-.logoutBg{
-    pointer-events: all;
+.bg{
     opacity: 0;
+    pointer-events: all;
     position: fixed;
     top: 0;
     left: 0;
@@ -82,10 +82,10 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.logoutBg.active{
+.bg.active{
     opacity: 1;
 }
 
@@ -103,7 +103,7 @@
     position: relative;
     box-shadow: 0 0 15px 3px wheat, 0 0 15px 2px wheat inset;
     z-index: 1001;
-    transition: 0.7s ease
+    transition: 0.5s ease-in-out
 }
 
 .logoutWindow div{
@@ -115,7 +115,7 @@
 
 .logoutWindow.active{
     scale: 1;
-    transition: scale 0.7s ease;
+    transition: scale 0.5s ease-in-out;
 }
 
 .logoutWindow section {
@@ -152,3 +152,30 @@
     color: black;
     background-color: whitesmoke;
 }
+
+
+.dataContainer,
+.goalContainer,
+.scheduleContainer{
+    scale: 0;
+    background-color: black;
+    border-radius: 30px;
+    border: wheat solid;
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px 3px wheat, 0 0 15px 2px wheat inset;
+    z-index: 1001;
+    transition: scale 0.5s ease-in-out
+}
+
+.dataContainer.active,
+.goalContainer.active,
+.scheduleContainer.active{
+    scale: 1;
+    transition: scale 0.5s ease-in-out;
+}
+

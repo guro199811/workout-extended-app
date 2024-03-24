@@ -44,11 +44,10 @@ function Navbar() {
     <div className={styles.navbar}>
       <a href="/" className={styles.logo}><img src={logo} /></a>
       <div className={styles.links}>
-        <a href="/">Home</a>
         <a href="/">Search in Exercises</a>
         { userToken ? 
         <a className={styles.sidebarBtn} onClick={() => toggleSidebar()}>
-          { showSidebar ? <i class='bx bx-menu-alt-right'></i> : <i className='bx bx-menu'></i> }</a> : 
+          { showSidebar ? <i className='bx bx-menu-alt-right'></i> : <i className='bx bx-menu'></i> }</a> : 
         <a className={styles.loginBtn} onClick={login}>Log-In</a> }
       </div>
     </div>
