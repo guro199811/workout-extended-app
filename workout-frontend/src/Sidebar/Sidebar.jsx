@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import styles from './Sidebar.module.css';
 
+import UserData from './UserData/UserData.jsx'
+
 function Sidebar() {
 
 
@@ -69,18 +71,21 @@ function Sidebar() {
                         <div className={`${styles.dataContainer} 
                         ${sidebarItem == 'My Data' ? styles.active : '' }`}
                             onClick={(e) => e.stopPropagation()}>
+                                <UserData />
                         </div>
                         )}
                         {sidebarItem === 'My Goals' && (
                         <div className={`${styles.goalContainer} 
                         ${sidebarItem == 'My Goals' ? styles.active : '' }`}
                             onClick={(e) => e.stopPropagation()}>
+
                         </div>
                         )}
                         {sidebarItem === 'My Schedule' && (
                         <div className={`${styles.scheduleContainer} 
                         ${sidebarItem == 'My Schedule' ? styles.active : '' }`}
                             onClick={(e) => e.stopPropagation()}>
+
                         </div>
                         )}
 
