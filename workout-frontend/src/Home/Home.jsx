@@ -47,7 +47,7 @@ function Home() {
           This Website Is designed to empower users to achieve their fitness
           goals. It offers a secure authentication system, personalized goal
           tracking, customizable schedule creation, weight tracking, and a
-          library of preset exercises, as time progresses new exerciese will be
+          library of preset exercises, as time progresses new exercieses will be
           added soon.
         </p>
       </div>

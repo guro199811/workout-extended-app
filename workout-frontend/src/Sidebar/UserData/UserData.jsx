@@ -6,12 +6,13 @@ import { useAuth } from "../../AuthContext.jsx";
 function UserData() {
   const [data, setData] = useState(null);
   const [auth, setAuth] = useState(false);
+  const [bmi, setBMI] = useState(0);
 
   const { userToken, setUserToken } = useAuth();
   if (!userToken) {
-    setUserToken(localStorage.getItem('accessToken'));
+    setUserToken(localStorage.getItem("accessToken"));
   }
-    
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,11 +30,15 @@ function UserData() {
         setData(data);
         setAuth(true);
         console.log(data);
+        const BMI = () => {
+          const weight = data.weight;
+          const height = data.height;
+          const bmi = weight / (height * height);
+          setBMI(bmi);
+        }
+        BMI();
       } catch (error) {
-        console.error(
-          "There has been a problem with fetch operation:",
-          error
-        );
+        console.error("There has been a problem with fetch operation:", error);
         setAuth(false);
       }
     };
@@ -45,9 +50,30 @@ function UserData() {
       <div className={styles.outerDiv}>
         {auth ? (
           <div className={styles.data}>
-            <p>My Data</p>
-            <label>Username</label>
-            <input type="text" />
+            <div className={styles.firstWrapper}>
+              <p>My Data</p>
+            </div>
+
+            <div className={styles.secondWrapper}>
+              <label>Full Name</label>
+              <input type="text" value={data.fullname} readOnly disabled />
+              <label>Weight</label>
+              <input type="text" value={data.weight} readOnly disabled />
+              <label>Height</label>
+              <input type="text" value={data.height} readOnly disabled />
+            </div>
+
+            <div className={styles.thirdWrapper}>
+              <label>BMI</label>
+              <input type="text" value={bmi} readOnly disabled />
+              <button className={styles.bmiButton}>Manual Bmi</button>
+            </div>
+
+            <div className={styles.fourthWrapper}>
+              <button>
+                <i className="bx bx-edit"></i>
+              </button>
+            </div>
           </div>
         ) : (
           <div className={styles.failedData}>

@@ -1,4 +1,136 @@
 .outerDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    height: 95%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+
+.firstWrapper,
+.secondWrapper,
+.thirdWrapper,
+.fourthWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.firstWrapper{
+    justify-content: flex-start;
+}
+
+.secondWrapper{
+    justify-content: space-between;
+    margin: 10px 2px;
+}
+
+.fourthWrapper{
+    justify-content: flex-end;
+    margin: 10px 2px;
+}
+
+
+.data p,
+.failedData p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+    transition: color 200ms ease-in-out;
+}
+
+.data p:hover{
+    color:hsl(120, 100%, 87%);
+}
+
+.data label{
+    user-select: none;
+    color: whitesmoke;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    margin: 5%;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.data label:hover{
+    color: wheat;
+}
+
+.data input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;;
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 13px 2px wheat, 0px 0px 1px 0.1px inset;
+    transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.data input:focus{
+    
+    box-shadow: 0px 0px 13px 2px hsl(39, 100%, 55%), 0px 0px 1px 0.1px inset;
+}
+
+.data input:hover{
+    color: hsla(39, 100%, 83%, 0.836);
+    box-shadow: 0px 0px 13px 2px hsl(39, 100%, 55%), 0px 0px 1px 0.1px inset;
+}
+
+
+.thirdWrapper button{
+    padding: 5px 15px;
+    margin-top: 18px;
+    color: rgb(0, 51, 27);
+    background-color: hsl(155, 100%, 48%);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px hsl(155, 100%, 48%);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.thirdWrapper button:hover{
+    background-color: hsl(39, 100%, 80%);
+    box-shadow: 0px 0px 10px 2px hsl(39, 100%, 55%);
+    color: rgb(71, 0, 0) !important;
+}
+
+
+.data .fourthWrapper button{
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 13px 2px wheat, 0px 0px 1px 0.1px inset;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: box-shadow 0.35s ease-in-out, color 0.3s ease-in-out;
+}
+
+.data button:hover{
+    color: hsl(120, 100%, 87%);
+    box-shadow: 0px 0px 15px 2px hsl(120, 100%, 87%), 0px 0px 1px 0.1px inset;
 }

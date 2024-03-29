@@ -46,7 +46,6 @@ function Auth({ onClose }) {
         },
       });
       const data = await response.json();
-      console.log('API response:', data);
       setUserToken(data);
       onClose();
 
@@ -63,7 +62,6 @@ function Auth({ onClose }) {
   const handleRegisterForm = async (event) => {
     event.preventDefault();
     try {
-      console.log(registerFormData)
       const response = await fetch('http://0.0.0.0:8000/auth/register', {
         method: 'POST',
         body: JSON.stringify(registerFormData),
@@ -73,7 +71,6 @@ function Auth({ onClose }) {
         },
       });
       const data = await response.json();
-      // console.log('API response:', data);
 
     } catch (error) {
       console.error('Error sending data:', error);

@@ -22,9 +22,26 @@ export function AuthProvider({ children }) {
         setUserToken(parsedToken);
       } else {
         localStorage.removeItem("accessToken");
+        window.location.reload();
       }
     }
+    const intervalId = setInterval(() => {
+      const storedToken = localStorage.getItem("accessToken");
+      if (storedToken) {
+        const parsedToken = JSON.parse(storedToken);
+        if (isTokenExpired(parsedToken.access_token)) {
+          setUserToken(null);
+          localStorage.removeItem("accessToken");
+          window.location.reload();
+        }
+      }
+    }, 60000); // 60000 ms = 1 minute
+
+    // Clear interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
+
+  
 
   useEffect(() => {
     if (userToken) {
