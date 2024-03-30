@@ -43,7 +43,31 @@
 
 .fourthWrapper{
     justify-content: flex-end;
+    flex-direction: row;
     margin: 10px 2px;
+}
+
+.fourthWrapper button{
+    margin: 5px 5px;
+}
+
+.fourthWrapper .editButton{
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 13px 2px wheat, 0px 0px 1px 0.1px inset;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: box-shadow 0.35s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.fourthWrapper .editButton:hover{
+    color: hsl(0, 0%, 0%);
+    box-shadow: 0px 0px 15px 2px hsl(59, 53%, 51%), 0px 0px 1px 0.1px inset;
+    background-color: rgb(202, 211, 77) !important;
 }
 
 
@@ -65,7 +89,7 @@
     user-select: none;
     color: whitesmoke;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;
+    font-size: 17px;
     margin: 5%;
     font-weight: bold;
     text-align: center;
@@ -78,7 +102,7 @@
 
 .data input{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;;
+    font-size: 16px;;
     padding: 5px 0;
     text-align: center;
     border-radius: 5px;
@@ -117,20 +141,127 @@
 }
 
 
-.data .fourthWrapper button{
+
+.manualBmi{
+    scale: 0;
+    opacity: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: 25px;
+    background-color: transparent ;
+    backdrop-filter: blur(10px);
+    overflow: auto;
+    transition: scale 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.manualBmi.active{
+    scale: 1;
+    opacity: 1;
+    background-color: hsla(0, 0%, 0%, 0.452);
+}
+
+.manualBmi h3{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px !important;
+    font-weight: bold;
+    color: hsl(0, 0%, 0%);
+    background-color: wheat;
+    padding: 0px 25px;
+    border-radius: 25px;
+    margin: 10px 0;
+}
+
+.manualBmi label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    margin: 1%;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.manualBmi input[type="text"]{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    padding: 5px 0;
+    background-color: transparent !important;
+    text-align: center;
     border-radius: 5px;
     border: none;
     box-shadow: 0px 0px 13px 2px wheat, 0px 0px 1px 0.1px inset;
-    width: 30px;
+    transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.manualBmi button{
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 13px 2px wheat, 0px 0px 1px 0.1px inset;
+    width: auto;
     height: 30px;
     background-color: transparent;
     color: white;
     font-size: 16px;
     font-weight: bold;
-    transition: box-shadow 0.35s ease-in-out, color 0.3s ease-in-out;
+    padding: 2px 10px;
+    margin: 30px 0px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.data button:hover{
-    color: hsl(120, 100%, 87%);
-    box-shadow: 0px 0px 15px 2px hsl(120, 100%, 87%), 0px 0px 1px 0.1px inset;
+.manualBmi button:hover{
+    background-color: rgb(68, 68, 68);
+    box-shadow: 0px 0px 13px 2px rgb(138, 138, 138);
+}
+
+
+
+
+input[type="radio"]{
+    display: none !important;
+  }
+
+
+.radio{
+    margin-top: 15px;
+    display:flex;
+    flex-direction: row;
+}
+
+.radio label{
+    margin: 4px 4px;
+    position: relative;
+    font-size: 15px;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio label:before{
+    content:"";
+    height: 10px;
+    width: 10px;
+    border: 3px solid wheat;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+input[type="radio"]:checked + label{
+    background-color: wheat !important;
+    color: rgb(0, 0, 0);    
+}
+
+input[type='radio']:checked + label:before{
+    height: 10px;
+    width: 10px;
+    border: 3px solid black;
+    background-color: rgb(0, 0, 0);
 }
