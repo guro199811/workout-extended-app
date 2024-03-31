@@ -5,6 +5,8 @@
 - added workout retrieving in central menu
 - added Login and Register Functionality(Needs some adjustements)
 - added logout functionality
+- added User menu functionality
+- added BMI calculation functionality
 
 # Backend Additions
 - added cors middleware origins for api fetchability
