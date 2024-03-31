@@ -48,13 +48,7 @@ function UserData() {
         setData(data);
         setAuth(true);
         console.log(data);
-        const BMI = () => {
-          const weight = data.weight;
-          const height = data.height;
-          const bmi = weight / (height * height);
-          setBMI(bmi);
-        }
-        BMI();
+      
       } catch (error) {
         console.error("There has been a problem with fetch operation:", error);
         setAuth(false);
@@ -139,9 +133,7 @@ function UserData() {
 
 
             <div className={styles.thirdWrapper}>
-              <label>BMI</label>
-              <input type="text" value={bmi} readOnly disabled />
-              <button className={styles.bmiButton} onClick={() => handleManualBmi()}>Manual Bmi</button>
+              <button className={styles.bmiButton} onClick={() => handleManualBmi()}>BMI Calculator</button>
             </div>
 
             <div className={styles.fourthWrapper}>

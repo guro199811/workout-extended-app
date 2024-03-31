@@ -143,6 +143,7 @@
 
 .thirdWrapper button{
     padding: 5px 15px;
+    font-size: 18px;
     margin-top: 18px;
     color: rgb(0, 51, 27);
     background-color: hsl(155, 100%, 48%);
