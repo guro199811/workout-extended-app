@@ -17,7 +17,16 @@ function UserData() {
 
   const [editMode, setEditMode] = useState(false);
 
+  const [editData, setEditData] = useState(
+    {
+      fullname: '',
+      weight: null,
+      height: null
+    }
+  )
+
   const { userToken, setUserToken } = useAuth();
+
   if (!userToken) {
     setUserToken(localStorage.getItem("accessToken"));
   }
@@ -77,6 +86,31 @@ function UserData() {
 
   const editUserData = () => {
     setEditMode(!editMode);
+  }
+
+  const handleSave = async() => {
+    try{
+      const editedData = {
+        fullname: data.fullname,
+        weight: data.weight,
+        height: data.height
+      };
+      const request = await fetch('http://localhost:8000/user/data_change', {
+        method: 'PUT',
+        body: JSON.stringify(editedData),
+        headers: {
+          'accept': 'application/json',
+          'Content-Type': 'application/json',
+          "Authorization": `Bearer ${userToken.access_token}`
+        }
+      })
+      const response = await request.json();
+      console.log(response);
+      setEditMode(false);
+    }
+    catch(e){
+      console.log(e);
+    }
   }
 
   return (
