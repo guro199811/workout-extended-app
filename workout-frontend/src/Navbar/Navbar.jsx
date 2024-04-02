@@ -5,6 +5,7 @@ import Auth from '../Auth/Auth.jsx';
 import Sidebar from '../Sidebar/Sidebar.jsx';
 import logo from '../assets/logo.png';
 import { useAuth } from "../AuthContext.jsx"
+import SearchExercises from './SearchExercises/SearchExercises.jsx';
 
 function Navbar() {
 
@@ -12,6 +13,7 @@ function Navbar() {
   const [authComponent, setAuthComponent] = useState(false);
   const [wrapper, setWrapper] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   
   const { userToken } = useAuth()
 
@@ -37,6 +39,11 @@ function Navbar() {
     setShowSidebar(!showSidebar);
   }
 
+  function toggleSearch() {
+    setWrapper(!wrapper);
+    setShowSearch(!showSidebar)
+  }
+
 
 
   return (
@@ -44,7 +51,8 @@ function Navbar() {
     <div className={styles.navbar}>
       <a href="/" className={styles.logo}><img src={logo} /></a>
       <div className={styles.links}>
-        <a href="/">Search in Exercises</a>
+        <a onClick={() => toggleSearch()}>Search in Exercises</a>
+        { showSearch && <SearchExercises onClose={ toggleSearch } />}
         { userToken ? 
         <a className={styles.sidebarBtn} onClick={() => toggleSidebar()}>
           { showSidebar ? <i className='bx bx-menu-alt-right'></i> : <i className='bx bx-menu'></i> }</a> : 

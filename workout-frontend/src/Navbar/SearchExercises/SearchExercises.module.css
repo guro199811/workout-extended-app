@@ -1,0 +1,31 @@
+.bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.514);
+    backdrop-filter: blur(10px);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    
+}
+
+
+
+.window{
+    padding: 35px;
+    display: flex;
+    border: none;
+    border-radius: 25px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.664);
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    box-shadow: 0px 0px 15px 2px hsl(59, 100%, 50%), 0px 0px 1px 0.1px inset;
+}
