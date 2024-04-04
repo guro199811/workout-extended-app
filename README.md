@@ -10,3 +10,8 @@
 
 # Backend Additions
 - added cors middleware origins for api fetchability
+
+
+### Attention ###
+Project will not be supported for couple of months
+Due To the return to the basics and learning python more indepth
